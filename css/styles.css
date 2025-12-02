@@ -3745,6 +3745,7 @@ img.u-pull-left {
   color: var(--color-text-light);
   line-height: var(--vspace-0_75);
   margin-left: 0.2rem;
+  margin-top: 1.2rem;
 }
 
 .folio-list__proj-link {
