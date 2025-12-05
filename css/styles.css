@@ -4226,6 +4226,11 @@ img.u-pull-left {
   fill: white;
 }
 
+
+
+
+
+
 /* ------------------------------------------------------------------- 
  * responsive:
  * footer
@@ -4249,4 +4254,129 @@ img.u-pull-left {
   .ss-go-top {
     right: 6vw;
   }
+
+
+  
 }
+
+
+/* Contact Form – Black Theme + Gold Accent */
+#contact form {
+    width: 100%;
+    margin-top: 40px;
+}
+
+/* Input + Textarea wrapper */
+#contact .form-box {
+    width: 100%;
+}
+#submit-form .row input, #submit-form .row textarea {
+  background-color: #272827;
+}
+/* Inputs + textarea */
+#contact input,
+#contact textarea {
+    width: 100%;
+    padding: 14px 18px;
+    background: transparent;
+    border: 1px solid var(--color-1);/* soft gold */
+    color: rgb(255, 255, 255); /* gold text */
+    font-size: 16px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+/* Placeholder color */
+#contact input::placeholder,
+#contact textarea::placeholder {
+    color: var(--color-1);
+}
+
+/* Hover effect */
+#contact input:hover,
+#contact textarea:hover {
+    border-color: rgba(190, 165, 27, 0.8);
+}
+
+/* Focus effect */
+#contact input:focus,
+#contact textarea:focus {
+    border-color: #a99316;
+    outline: none;
+    box-shadow: 0 0 8px rgba(255, 215, 0, 0.4);
+}
+
+/* Textarea size */
+#contact textarea {
+    min-height: 180px;
+    resize: vertical;
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+    #contact input,
+    #contact textarea {
+        font-size: 15px;
+        padding: 12px 15px;
+    }
+}
+
+/* ---------- FORM LAYOUT: 3 IN ONE ROW, STACK ON SMALL SCREENS ---------- */
+
+#submit-form .row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* space between fields */
+}
+
+/* 3 inputs in one row on large screens */
+#submit-form .col-lg-4,
+#submit-form .col-md-6 {
+    flex: 1 1 calc(33.333% - 20px);
+}
+
+/* Message should always be full width */
+#submit-form .col-lg-12 {
+    flex: 1 1 100%;
+}
+#submit-form button{
+    width: 100%;
+    color: #272827;
+    background-color: var(--color-1-dark);
+    border-radius: 6px;
+    
+
+}
+   #submit-form button:hover{
+    
+    width: 100%;
+    color: #ffffff;
+     background-color: #272827;
+
+    border-radius: 6px;
+     border: 1px solid var(--color-1);/* soft gold */
+
+}
+
+/* Stack all fields on smaller screens */
+@media (max-width: 768px) {
+    #submit-form .col-lg-4,
+    #submit-form .col-md-6 {
+        flex: 1 1 100%;
+    }
+}
+
+/* Remove arrows in Chrome, Edge, Safari, Opera */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Remove arrows in Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+

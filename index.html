@@ -692,11 +692,39 @@
                         </h2>
 
                         <p class="h1">
-                            I love to hear from you.
-                            Whether you have a question or just
-                            want to chat about design, tech & art — shoot me a message.
+                            Messages carry magic… share yours, and I’ll follow the thread.
                         </p>
                     </div>
+
+
+                    <form id="submit-form" action="">
+                        <div class="row">
+                            <div class="col-lg-4 col-md-6">
+                                <div class="form-box user-icon mb-25">
+                                    <input type="text" name="name" placeholder="Your name">
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <div class="form-box email-icon mb-25">
+                                    <input type="text" name="email" placeholder="Email">
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <div class="form-box email-icon mb-25">
+                                    <input type="number" name="mobile" placeholder="Mobile">
+                                </div>
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="form-box message-icon mb-25">
+                                    <textarea name="message" id="message" placeholder="Message"></textarea>
+                                </div>
+                                <div class="submit-info ">
+                                    <button class="submit-btn2" type="submit">Send Message</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+
                 </div> <!-- end contact-top -->
 
                 <div class="row contact-bottom">
@@ -759,7 +787,26 @@
     ================================================== -->
     <script src="js/plugins.js"></script>
     <script src="js/main.js"></script>
-
+  <!-- contact js -->
+    <script>
+        $("#submit-form").submit((e)=>{
+            e.preventDefault()
+            $.ajax({
+                url:"https://script.google.com/macros/s/AKfycbzqAjLy5zZlbXfgGzXdO08hR22Ngw2o2jOXAD9EEqO5Fck-XWixBi39UWPABVCoK8tCFA/exec",
+                data:$("#submit-form").serialize(),
+                method:"POST",
+                success:function (response){
+                    alert("Message send successfully")
+                    window.location.reload()
+                    //window.location.href="https://google.com"
+                },
+                error:function (err){
+                    alert("Something Error")
+    
+                }
+            })
+        })
+    </script>
 </body>
 
 </html>
