@@ -26,8 +26,8 @@
     <link rel="icon" type="image/png" sizes="16x16" href="images/FZ Games logo.png">
     <link rel="manifest" href="site.webmanifest">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
- <script src="https://code.jquery.com/jquery-3.7.1.js"
-            integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
 
 </head>
 
@@ -472,6 +472,15 @@
                     </div> <!-- end column -->
 
 
+                    <!--Loading -->
+                    <div class="loading" id="loading">
+                        <div class="spinner"></div>
+                    </div>
+
+                    
+                    <!--Loading end-->
+
+
                     <!-- Modal Templates Popup
                     -------------------------------------------- -->
                     <div id="modal-01" hidden>
@@ -683,7 +692,10 @@
 
 
             <!-- ### contact
-            ================================================== -->
+            ================================================== --><!-- Custom Alert -->
+   
+
+
             <section id="contact" class="s-contact target-section">
 
                 <div class="row contact-top">
@@ -753,6 +765,10 @@
                 </div> <!-- end contact-bottom -->
 
             </section> <!-- end contact -->
+     <div class="alert-box1" id="custom-alert">
+    <p>Your message successfully sent</p>
+    <span class="alert-box1__close" id="alert-close">&times;</span>
+</div>
 
         </main> <!-- end s-content -->
 
@@ -788,26 +804,54 @@
     ================================================== -->
     <script src="js/plugins.js"></script>
     <script src="js/main.js"></script>
-  <!-- contact js -->
-    <script>
-        $("#submit-form").submit((e)=>{
-            e.preventDefault()
-            $.ajax({
-                url:"https://script.google.com/macros/s/AKfycbzqAjLy5zZlbXfgGzXdO08hR22Ngw2o2jOXAD9EEqO5Fck-XWixBi39UWPABVCoK8tCFA/exec",
-                data:$("#submit-form").serialize(),
-                method:"POST",
-                success:function (response){
-                    alert("Message send successfully")
-                    window.location.reload()
-                    //window.location.href="https://google.com"
-                },
-                error:function (err){
-                    alert("Something Error")
-    
-                }
-            })
-        })
-    </script>
+    <!-- contact js -->
+  <script>
+$("#submit-form").submit(function(e){
+    e.preventDefault();
+
+    $("#loading").css("display","flex");
+
+    $.ajax({
+        url:"https://script.google.com/macros/s/AKfycbzqAjLy5zZlbXfgGzXdO08hR22Ngw2o2jOXAD9EEqO5Fck-XWixBi39UWPABVCoK8tCFA/exec",
+        data: $("#submit-form").serialize(),
+        method: "POST",
+        success: function(){
+            $("#loading").hide();
+
+            const alertBox = $("#custom-alert");
+            alertBox.find("p").text("Your message successfully sent");
+            alertBox.addClass("show");
+
+            setTimeout(() => {
+                alertBox.removeClass("show");
+            }, 3000);
+
+            $("#submit-form")[0].reset();
+        },
+        error: function(){
+            $("#loading").hide();
+
+            const alertBox = $("#custom-alert");
+            alertBox.find("p").text("Something went wrong!");
+            alertBox.addClass("show");
+
+            setTimeout(() => {
+                alertBox.removeClass("show");
+            }, 3000);
+        }
+    });
+});
+
+// Close manually
+$("#alert-close").click(function(){
+    $("#custom-alert").removeClass("show");
+});
+</script>
+
+
+
+
+
 </body>
 
 </html>
