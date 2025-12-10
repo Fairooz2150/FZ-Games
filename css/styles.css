@@ -1799,9 +1799,11 @@ img,
 .loading {
   display: none;
   position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: rgba(0,0,0,0.5);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(2px);
   justify-content: center;
   align-items: center;
@@ -1818,58 +1820,61 @@ img,
 }
 
 @keyframes spin {
-  100% { transform: rotate(360deg); }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 /* Fullscreen overlay */
 .alert-overlay {
-    display: none;
-    position: fixed;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background: rgba(18, 15, 15, 0.5);
-    backdrop-filter: blur(2px);
-    z-index: 999999999;
-    justify-content: center;
-    align-items: center;
-     box-shadow: 10 10px 10px rgb(176, 40, 40);
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(18, 15, 15, 0.5);
+  backdrop-filter: blur(2px);
+  z-index: 999999999;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 10 10px 10px rgb(176, 40, 40);
 }
 
 /* Alert popup */
 .alert-box1 {
-    display: none;
-    position: fixed;
-    top: 20px;                /* TOP of the screen */
-    left: 50%;
-    transform: translateX(-50%) translateY(-10px);
-    background: #211f1f;
-    color: #fff;
-    padding: 15px 25px;
-    border-radius: 10px;
-    text-align: center;
-    min-width: 300px;
-    z-index: 999999999;
-    opacity: 0;
-     box-shadow: 0 3px 4px rgb(40, 37, 37);
-    transition: opacity .3s ease, transform .3s ease;
+  display: none;
+  position: fixed;
+  top: 20px; /* TOP of the screen */
+  left: 50%;
+  transform: translateX(-50%) translateY(-10px);
+  background: #211f1f;
+  color: #fff;
+  padding: 20px 30px;
+  border-radius: 10px;
+  text-align: center;
+  min-width: 380px;
+  height: 90px;
+  z-index: 999999999;
+  opacity: 0;
+  box-shadow: 0 3px 4px rgb(40, 37, 37);
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 /* Show animation */
 .alert-box1.show {
-    display: block;
-    opacity: 1;
-    transform: translateX(-50%) translateY(0);
+  display: block;
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
 }
 
 /* Close button */
 .alert-box1__close {
-    position: absolute;
-    top: 6px;
-    right: 10px;
-    font-size: 20px;
-    cursor: pointer;
+  position: absolute;
+  top: 6px;
+  right: 10px;
+  font-size: 20px;
+  cursor: pointer;
 }
-
-
 
 #preloader {
   position: fixed;
@@ -4302,11 +4307,6 @@ img.u-pull-left {
   fill: white;
 }
 
-
-
-
-
-
 /* ------------------------------------------------------------------- 
  * responsive:
  * footer
@@ -4330,129 +4330,119 @@ img.u-pull-left {
   .ss-go-top {
     right: 6vw;
   }
-
-
-  
 }
-
 
 /* Contact Form – Black Theme + Gold Accent */
 #contact form {
-    width: 100%;
-    margin-top: 40px;
+  width: 100%;
+  margin-top: 40px;
 }
 
 /* Input + Textarea wrapper */
 #contact .form-box {
-    width: 100%;
+  width: 100%;
 }
-#submit-form .row input, #submit-form .row textarea {
+#submit-form .row input,
+#submit-form .row textarea {
   background-color: #272827;
 }
 /* Inputs + textarea */
 #contact input,
 #contact textarea {
-    width: 100%;
-    padding: 14px 18px;
-    background: transparent;
-    border: 1px solid var(--color-1);/* soft gold */
-    color: rgb(255, 255, 255); /* gold text */
-    font-size: 16px;
-    border-radius: 6px;
-    transition: all 0.3s ease;
+  width: 100%;
+  padding: 14px 18px;
+  background: transparent;
+  border: 1px solid var(--color-1); /* soft gold */
+  color: rgb(255, 255, 255); /* gold text */
+  font-size: 16px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
 }
 
 /* Placeholder color */
 #contact input::placeholder,
 #contact textarea::placeholder {
-    color: var(--color-1);
+  color: var(--color-1);
 }
 
 /* Hover effect */
 #contact input:hover,
 #contact textarea:hover {
-    border-color: rgba(190, 165, 27, 0.8);
+  border-color: rgba(190, 165, 27, 0.8);
 }
 
 /* Focus effect */
 #contact input:focus,
 #contact textarea:focus {
-    border-color: #a99316;
-    outline: none;
-    box-shadow: 0 0 8px rgba(255, 215, 0, 0.4);
+  border-color: #a99316;
+  outline: none;
+  box-shadow: 0 0 8px rgba(255, 215, 0, 0.4);
 }
 
 /* Textarea size */
 #contact textarea {
-    min-height: 180px;
-    resize: vertical;
+  min-height: 180px;
+  resize: vertical;
 }
-
 
 /* Responsive */
 @media (max-width: 768px) {
-    #contact input,
-    #contact textarea {
-        font-size: 15px;
-        padding: 12px 15px;
-    }
+  #contact input,
+  #contact textarea {
+    font-size: 15px;
+    padding: 12px 15px;
+  }
 }
 
 /* ---------- FORM LAYOUT: 3 IN ONE ROW, STACK ON SMALL SCREENS ---------- */
 
 #submit-form .row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px; /* space between fields */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /* space between fields */
 }
 
 /* 3 inputs in one row on large screens */
 #submit-form .col-lg-4,
 #submit-form .col-md-6 {
-    flex: 1 1 calc(33.333% - 20px);
+  flex: 1 1 calc(33.333% - 20px);
 }
 
 /* Message should always be full width */
 #submit-form .col-lg-12 {
-    flex: 1 1 100%;
+  flex: 1 1 100%;
 }
-#submit-form button{
-    width: 100%;
-    color: #272827;
-    background-color: var(--color-1-dark);
-    border-radius: 6px;
-    
-
+#submit-form button {
+  width: 100%;
+  color: #272827;
+  background-color: var(--color-1-dark);
+  border-radius: 6px;
 }
-   #submit-form button:hover{
-    
-    width: 100%;
-    color: #ffffff;
-     background-color: #272827;
+#submit-form button:hover {
+  width: 100%;
+  color: #ffffff;
+  background-color: #272827;
 
-    border-radius: 6px;
-     border: 1px solid var(--color-1);/* soft gold */
-
+  border-radius: 6px;
+  border: 1px solid var(--color-1); /* soft gold */
 }
 
 /* Stack all fields on smaller screens */
 @media (max-width: 768px) {
-    #submit-form .col-lg-4,
-    #submit-form .col-md-6 {
-        flex: 1 1 100%;
-    }
+  #submit-form .col-lg-4,
+  #submit-form .col-md-6 {
+    flex: 1 1 100%;
+  }
 }
 
 /* Remove arrows in Chrome, Edge, Safari, Opera */
-input[type=number]::-webkit-inner-spin-button,
-input[type=number]::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 /* Remove arrows in Firefox */
-input[type=number] {
-    -moz-appearance: textfield;
+input[type="number"] {
+  -moz-appearance: textfield;
 }
-
-

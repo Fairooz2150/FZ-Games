@@ -477,7 +477,7 @@
                         <div class="spinner"></div>
                     </div>
 
-                    
+
                     <!--Loading end-->
 
 
@@ -693,7 +693,7 @@
 
             <!-- ### contact
             ================================================== --><!-- Custom Alert -->
-   
+
 
 
             <section id="contact" class="s-contact target-section">
@@ -714,22 +714,22 @@
                         <div class="row">
                             <div class="col-lg-4 col-md-6">
                                 <div class="form-box user-icon mb-25">
-                                    <input type="text" name="name" placeholder="Your name">
+                                    <input type="text" name="name" placeholder="Your name" required>
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-6">
                                 <div class="form-box email-icon mb-25">
-                                    <input type="text" name="email" placeholder="Email">
+                                    <input type="text" name="email" placeholder="Email" required>
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-6">
                                 <div class="form-box email-icon mb-25">
-                                    <input type="number" name="mobile" placeholder="Mobile">
+                                    <input type="number" name="mobile" placeholder="Mobile" required>
                                 </div>
                             </div>
                             <div class="col-lg-12">
                                 <div class="form-box message-icon mb-25">
-                                    <textarea name="message" id="message" placeholder="Message"></textarea>
+                                    <textarea name="message" id="message" placeholder="Message" required></textarea>
                                 </div>
                                 <div class="submit-info ">
                                     <button class="submit-btn2" type="submit">Send Message</button>
@@ -765,10 +765,10 @@
                 </div> <!-- end contact-bottom -->
 
             </section> <!-- end contact -->
-     <div class="alert-box1" id="custom-alert">
-    <p>Your message successfully sent</p>
-    <span class="alert-box1__close" id="alert-close">&times;</span>
-</div>
+            <div class="alert-box1" id="custom-alert">
+                <p>Your message successfully sent</p>
+                <span class="alert-box1__close" id="alert-close">&times;</span>
+            </div>
 
         </main> <!-- end s-content -->
 
@@ -805,48 +805,48 @@
     <script src="js/plugins.js"></script>
     <script src="js/main.js"></script>
     <!-- contact js -->
-  <script>
-$("#submit-form").submit(function(e){
-    e.preventDefault();
+    <script>
+        $("#submit-form").submit(function (e) {
+            e.preventDefault();
 
-    $("#loading").css("display","flex");
+            $("#loading").css("display", "flex");
 
-    $.ajax({
-        url:"https://script.google.com/macros/s/AKfycbzqAjLy5zZlbXfgGzXdO08hR22Ngw2o2jOXAD9EEqO5Fck-XWixBi39UWPABVCoK8tCFA/exec",
-        data: $("#submit-form").serialize(),
-        method: "POST",
-        success: function(){
-            $("#loading").hide();
+            $.ajax({
+                url: "https://script.google.com/macros/s/AKfycbzqAjLy5zZlbXfgGzXdO08hR22Ngw2o2jOXAD9EEqO5Fck-XWixBi39UWPABVCoK8tCFA/exec",
+                data: $("#submit-form").serialize(),
+                method: "POST",
+                success: function () {
+                    $("#loading").hide();
 
-            const alertBox = $("#custom-alert");
-            alertBox.find("p").text("Your message successfully sent");
-            alertBox.addClass("show");
+                    const alertBox = $("#custom-alert");
+                    alertBox.find("p").text("Your message successfully sent");
+                    alertBox.addClass("show");
 
-            setTimeout(() => {
-                alertBox.removeClass("show");
-            }, 3000);
+                    setTimeout(() => {
+                        alertBox.removeClass("show");
+                    }, 3000);
 
-            $("#submit-form")[0].reset();
-        },
-        error: function(){
-            $("#loading").hide();
+                    $("#submit-form")[0].reset();
+                },
+                error: function () {
+                    $("#loading").hide();
 
-            const alertBox = $("#custom-alert");
-            alertBox.find("p").text("Something went wrong!");
-            alertBox.addClass("show");
+                    const alertBox = $("#custom-alert");
+                    alertBox.find("p").text("Something went wrong!");
+                    alertBox.addClass("show");
 
-            setTimeout(() => {
-                alertBox.removeClass("show");
-            }, 3000);
-        }
-    });
-});
+                    setTimeout(() => {
+                        alertBox.removeClass("show");
+                    }, 3000);
+                }
+            });
+        });
 
-// Close manually
-$("#alert-close").click(function(){
-    $("#custom-alert").removeClass("show");
-});
-</script>
+        // Close manually
+        $("#alert-close").click(function () {
+            $("#custom-alert").removeClass("show");
+        });
+    </script>
 
 
 
